@@ -1,4 +1,4 @@
-package com.example.aquatests;
+package com.demoTest;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
