@@ -35,7 +35,6 @@ public class MainPageTest {
 
         $("[data-test='search-input']").sendKeys("Selenium");
         $("button[data-test='full-search-button']").click();
-
         $("input[data-test='search-input']").shouldHave(attribute("value", "Selenium"));
     }
 
