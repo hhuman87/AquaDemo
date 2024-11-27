@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-# Define Gradle as the image for the build environment
+# Use a Docker image that includes Java, Gradle, and Chrome
 image: gradle:8.11.1-jdk21
 
 # Cache Gradle dependencies to speed up the pipeline
@@ -11,6 +11,17 @@ cache:
   paths:
     - .gradle/
     - build/
+
+# Before script: Install Google Chrome and ChromeDriver for Selenium
+before_script:
+  - apt-get update && apt-get install -y wget curl unzip
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - dpkg -i google-chrome-stable_current_amd64.deb
+  - apt-get install -f
+  - CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - mv chromedriver /usr/local/bin/
 
 # Job: Build the project
 build:
@@ -32,6 +43,3 @@ test:
     paths:
       - build/test-logs/
     expire_in: 1 hour
-
-# Optional: If you need to deploy the artifact to a server, you can add another job here, e.g., deploy stage.
-
