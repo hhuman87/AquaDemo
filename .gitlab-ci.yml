@@ -2,44 +2,30 @@ stages:
   - build
   - test
 
-# Use a Docker image that includes Java, Gradle, and Chrome
-image: gradle:8.11.1-jdk21
-
-# Cache Gradle dependencies to speed up the pipeline
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - .gradle/
-    - build/
-
-# Before script: Install Google Chrome and ChromeDriver for Selenium
-before_script:
-  - apt-get update && apt-get install -y wget curl unzip gnupg2 lsb-release
-  - apt-get install -y libx11-6 libxcomposite1 libxdamage1 libxrandr2 libgdk-pixbuf2.0-0 libnspr4 libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdbus-1-3 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 libpango-1.0-0 libvulkan1 xdg-utils
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -f -y
-  - CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - mv chromedriver /usr/local/bin/
-
-# Job: Build the project
+# Build stage
 build:
   stage: build
+  image: gradle:8.11.1-jdk21
   script:
     - gradle clean build
-  artifacts:
-    paths:
-      - build/libs/*.jar
-    expire_in: 1 hour
 
-# Job: Run tests
+# Test stage using selenium/standalone-chrome image
 test:
   stage: test
+  image: selenium/standalone-chrome:latest
+  services:
+    - selenium/standalone-chrome:latest
+  before_script:
+    # Install Gradle into the selenium container (only if it's not already installed)
+    - apt-get update && apt-get install -y wget unzip
+    - wget https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+    - unzip gradle-8.11.1-bin.zip
+    - mv gradle-8.11.1 /opt/gradle
+    - export PATH=$PATH:/opt/gradle/bin
+    - gradle -v # Check Gradle version
   script:
-    - gradle test
+    - gradle test # Run tests
   artifacts:
-    when: always
     paths:
-      - build/test-logs/
-    expire_in: 1 hour
+      - build/reports/tests/test
+    expire_in: 1 week
