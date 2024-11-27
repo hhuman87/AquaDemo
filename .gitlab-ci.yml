@@ -1,33 +1,13 @@
-stages:
-  - build
-  - test
-
-# Cache Gradle dependencies to speed up builds
-cache:
-  key: "$CI_COMMIT_REF_SLUG"
-  paths:
-    - .gradle/
-    - build/
+image: selenium/standalone-chrome:latest
 
 before_script:
   - export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle"
 
-# Build stage: compiles the code and prepares the project
-build:
-  stage: build
-  image: gradle:8.11.1-jdk21-alpine # Use Gradle with JDK 17 (adjust version if needed)
-  script:
-    - gradle clean build
-
-# Test stage: runs your tests using Gradle
 test:
   stage: test
-  image: gradle:8.11.1-jdk21-alpine # Use Gradle with JDK 17
   script:
-    - gradle test # This command assumes you have a test task defined in your build file
+    - gradle test
   artifacts:
     paths:
-      - build/reports/tests/test # Storing test results for viewing in GitLab
+      - build/reports/tests/test
     expire_in: 1 week
-
-# Notifications or any additional jobs can be added here if necessary
