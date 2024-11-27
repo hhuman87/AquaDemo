@@ -1,12 +1,22 @@
-image: selenium/standalone-chrome:latest
+stages:
+  - build
+  - test
 
-before_script:
-  - export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle"
+# Use a Gradle image with JDK and the necessary build tools
+build:
+  stage: build
+  image: gradle:8.11.1-jdk21 # This image contains Gradle and JDK 21
+  script:
+    - gradle clean build
 
+# Test stage: use the Selenium container for running tests
 test:
   stage: test
+  image: selenium/standalone-chrome:latest
+  services:
+    - selenium/standalone-chrome:latest
   script:
-    - gradle test
+    - gradle test # Running tests after the build step
   artifacts:
     paths:
       - build/reports/tests/test
