@@ -1,0 +1,37 @@
+stages:
+  - build
+  - test
+
+# Define Gradle as the image for the build environment
+image: gradle:8.11.1-jdk21
+
+# Cache Gradle dependencies to speed up the pipeline
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .gradle/
+    - build/
+
+# Job: Build the project
+build:
+  stage: build
+  script:
+    - gradle clean build
+  artifacts:
+    paths:
+      - build/libs/*.jar
+    expire_in: 1 hour
+
+# Job: Run tests
+test:
+  stage: test
+  script:
+    - gradle test
+  artifacts:
+    when: always
+    paths:
+      - build/test-logs/
+    expire_in: 1 hour
+
+# Optional: If you need to deploy the artifact to a server, you can add another job here, e.g., deploy stage.
+
