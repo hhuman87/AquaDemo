@@ -2,21 +2,29 @@ stages:
   - build
   - test
 
-# Use a Gradle image with JDK and the necessary build tools
+# Build stage
 build:
   stage: build
-  image: gradle:8.11.1-jdk21 # This image contains Gradle and JDK 21
+  image: gradle:8.11.1-jdk21
   script:
     - gradle clean build
 
-# Test stage: use the Selenium container for running tests
+# Test stage using selenium/standalone-chrome image
 test:
   stage: test
   image: selenium/standalone-chrome:latest
   services:
     - selenium/standalone-chrome:latest
+  before_script:
+    # Install Gradle into the selenium container (only if it's not already installed)
+    - apt-get update && apt-get install -y wget unzip
+    - wget https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+    - unzip gradle-8.11.1-bin.zip
+    - mv gradle-8.11.1 /opt/gradle
+    - export PATH=$PATH:/opt/gradle/bin
+    - gradle -v # Check Gradle version
   script:
-    - gradle test # Running tests after the build step
+    - gradle test # Run tests
   artifacts:
     paths:
       - build/reports/tests/test
