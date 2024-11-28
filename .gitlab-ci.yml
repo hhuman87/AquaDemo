@@ -1,45 +1,22 @@
 stages:
-  - build
   - test
 
-# Use a Docker image that includes Java, Gradle, and Chrome
-image: gradle:8.11.1-jdk21
-
-# Cache Gradle dependencies to speed up the pipeline
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - .gradle/
-    - build/
-
-# Before script: Install Google Chrome, ChromeDriver, and headless dependencies
 before_script:
-  - apt-get update && apt-get install -y wget curl unzip gnupg2 lsb-release
-  - apt-get install -y libx11-6 libxcomposite1 libxdamage1 libxrandr2 libgdk-pixbuf2.0-0 libnspr4 libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdbus-1-3 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 libpango-1.0-0 libvulkan1 xdg-utils
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -f -y
-  - CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - mv chromedriver /usr/local/bin/
+  # Ensure Java is installed (you can customize the version based on your requirements)
+  - echo "Setting up environment"
+  - java -version
+  - gradle -v
 
-# Job: Build the project
-build:
-  stage: build
-  script:
-    - gradle clean build
-  artifacts:
-    paths:
-      - build/libs/*.jar
-    expire_in: 1 hour
-
-# Job: Run tests
 test:
   stage: test
   script:
-    - gradle test
+    # Run the Gradle build and tests
+    - echo "Running tests with Gradle"
+    - gradle clean test --info
   artifacts:
-    when: always
+    # Optionally save the test results as artifacts
     paths:
-      - build/test-logs/
-    expire_in: 1 hour
+      - build/test-results/test
+    expire_in: 1 week
+  only:
+    - master
