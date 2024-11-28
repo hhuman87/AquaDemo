@@ -24,5 +24,4 @@ public class LoginPageSelectors {
     void select_Login() {
         inputLoginButton.click();
     }
-    
 }
