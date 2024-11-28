@@ -2,7 +2,6 @@ package com.demoTest;
 
 import org.junit.jupiter.api.Test;
 
-
 public class HomePageTests extends Setup_TearDown_Page {
 
     private final LoginPageTests loginPageTests = new LoginPageTests();
