@@ -1,9 +1,6 @@
 stages:
-  - build
   - test
 
-build:
-  stage: build
 before_script:
   # Ensure Java is installed (you can customize the version based on your requirements)
   - echo "Setting up environment"
