@@ -1,4 +1,5 @@
 stages:
+  - build
   - test
 
 before_script:
@@ -7,10 +8,24 @@ before_script:
   - java -version
   - gradle -v
 
+build:
+  stage: build
+  script:
+    # Run the Gradle build (compiling and packaging the code)
+    - echo "Building the project with Gradle"
+    - gradle build --info
+  artifacts:
+    # Optionally save the build artifacts (e.g., the JAR files)
+    paths:
+      - build/libs
+    expire_in: 1 week
+  only:
+    - master
+
 test:
   stage: test
   script:
-    # Run the Gradle build and tests
+    # Run the Gradle tests
     - echo "Running tests with Gradle"
     - gradle clean test --info
   artifacts:
