@@ -49,6 +49,7 @@ public class HomePageSelectors {
 
         sidebar_Logout_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_Logout_Link.shouldHave(text("Logout"));
+
         sidebar_ResetAppState_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_ResetAppState_Link.shouldHave(text("Reset App State"));
         burgerMenu_CloseButton.click();
