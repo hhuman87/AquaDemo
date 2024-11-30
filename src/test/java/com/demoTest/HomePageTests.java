@@ -1,5 +1,6 @@
 package com.demoTest;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class HomePageTests extends Setup_TearDown_Page {
@@ -8,6 +9,7 @@ public class HomePageTests extends Setup_TearDown_Page {
     private final HomePageSelectors homePageSelectors = new HomePageSelectors();
 
     @Test
+    @DisplayName("Validate the Burger Menu List on the HomePage")
     public void validate_Burger_Menu_List() {
         loginPageTests.login_To_SauceDemo();
         homePageSelectors.validate_Logo();
