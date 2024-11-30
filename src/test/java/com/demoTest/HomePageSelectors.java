@@ -46,6 +46,7 @@ public class HomePageSelectors {
 
         sidebar_About_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_About_Link.shouldHave(text("About"));
+
         sidebar_Logout_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_Logout_Link.shouldHave(text("Logout"));
         sidebar_ResetAppState_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
