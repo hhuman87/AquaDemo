@@ -18,7 +18,7 @@ public class Setup_TearDown_Page {
     public static void setUpAll() {
 //        WebDriverManager.chromedriver().setup();
         Configuration.browserSize = "1280x800";
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true));
     }
 
     @BeforeEach
