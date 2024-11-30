@@ -43,6 +43,7 @@ public class HomePageSelectors {
     void validate_Burger_Menu_List_Options() {
         sidebar_AllItems_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_AllItems_Link.shouldHave(text("All Items"));
+
         sidebar_About_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_About_Link.shouldHave(text("About"));
         sidebar_Logout_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
