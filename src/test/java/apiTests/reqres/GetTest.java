@@ -9,7 +9,6 @@ public class GetTest {
 
     @Test
     public void getTest() {
-
         baseURI = "https://reqres.in/api";
 
         given().
