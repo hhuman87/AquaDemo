@@ -28,13 +28,14 @@ public class GetTest {
             .extract().response();
 
         userID = response.path("data[1].id");
-        System.out.println("User ID is :"+userID);
+        System.out.println("User ID is: "+userID);
     }
 
     public void validateUserID() {
         given()
                 .get("/users?page=2").
         then()
+                .assertThat()
                 .body("data[1].id",equalTo(userID));
     }
 }

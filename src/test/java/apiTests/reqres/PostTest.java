@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.*;
 public class PostTest {
 
     private String token;
-    private String contentType = "application/json; charset=utf-8";
+    private final String contentType = "application/json; charset=utf-8";
 
     @Test
     public void postUser() {
@@ -23,7 +23,7 @@ public class PostTest {
             given()
                 .header("Content-Type", contentType)
                 .body("{" +
-                        "    \"email\": \"eve.holt@reqres.in\",\n" +
+                        "    \"email\": \"eve.holt@reqres.in\"," +
                         "    \"password\": \"pistol\"\n" +
                         "}")
             .when()
@@ -33,7 +33,7 @@ public class PostTest {
             .extract().response();
 
         token = response.path("token");
-        System.out.println("Token is :"+token);
+        System.out.println("Token is: "+token);
     }
 
     public void validateLoginSuccessful() {
@@ -41,7 +41,7 @@ public class PostTest {
             given()
                 .header("Content-Type", contentType)
                 .body("{" +
-                        "    \"email\": \"eve.holt@reqres.in\",\n" +
+                        "    \"email\": \"eve.holt@reqres.in\"," +
                         "    \"password\": \"cityslicka\"\n" +
                         "}")
             .when()
@@ -51,7 +51,7 @@ public class PostTest {
             .extract().response();
 
         String expectedToken = response.path("token");
-        System.out.println("Expected token is :"+expectedToken);
+        System.out.println("Expected token is: "+expectedToken);
         Assertions.assertEquals(expectedToken, token);
     }
 }
