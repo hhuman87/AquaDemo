@@ -59,11 +59,32 @@ public class Read_Write_ExcelData {
 
     @Test
     public void writeCellDataInExcel() throws IOException {
-        ExcelUtils excel = new ExcelUtils(excelPath,sheetName);
         FileInputStream inputStream = new FileInputStream(excelPath);
+
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = workbook.getSheet(sheetName);
 
+        int newColumnIndex = 3;
+
+        for (int rowIndex = 0; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
+            XSSFRow row = sheet.getRow(rowIndex);
+
+            if (row == null) {
+                row = sheet.createRow(rowIndex);
+            }
+
+            XSSFCell newDataCell = row.createCell(newColumnIndex);
+
+            newDataCell.setCellValue("New Data " + rowIndex);
+        }
+
+        FileOutputStream outputStream = new FileOutputStream("./ExcelTestData/Test1DataUpDated.xlsx");
+        workbook.write(outputStream);
+
+        outputStream.close();
+        inputStream.close();
+
+        System.out.println("Column added successfully!");
     }
 
     @Test
