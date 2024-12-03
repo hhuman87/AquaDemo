@@ -3,9 +3,11 @@ package forAllTests.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.util.Arrays;
 
 public class ExcelUtils {
@@ -18,7 +20,7 @@ public class ExcelUtils {
     public ExcelUtils(String excelPath, String sheetName) {
         try {
             workbook = new XSSFWorkbook(excelPath);
-            sheet = workbook.getSheet("Users");
+            sheet = workbook.getSheet(sheetName);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             log.error(String.valueOf(e.getCause()));
@@ -26,9 +28,25 @@ public class ExcelUtils {
         }
     }
 
-    public void getRowCount() {
+    public Integer getRowCount() {
         int rowCount = sheet.getPhysicalNumberOfRows();
         System.out.println("No of rows: " + rowCount);
+        return rowCount;
+    }
+
+    public Integer getColumnCount() {
+        int lastRowNum = getRowCount();
+        int columnCount = 0;
+
+        for (int i = 0; i <= lastRowNum; i++) {
+            Row row = sheet.getRow(i);
+            if (row != null) {
+                int currentRowCellCount = row.getPhysicalNumberOfCells();
+                columnCount = Math.max(columnCount, currentRowCellCount);
+            }
+        }
+        System.out.println("No of columns: " + columnCount);
+        return columnCount;
     }
 
     public Object getCellValue(int rowNum, int colNum) {
