@@ -31,9 +31,10 @@ public class ExcelUtils {
         System.out.println("No of rows: " + rowCount);
     }
 
-    public void getCellValue(int rowNum, int colNum) {
+    public Object getCellValue(int rowNum, int colNum) {
         DataFormatter formatter = new DataFormatter();
         Object cellValue = formatter.formatCellValue(sheet.getRow(rowNum).getCell(colNum));
         System.out.println("The cell value is: " + cellValue);
+        return cellValue;
     }
 }
