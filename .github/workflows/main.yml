@@ -1,0 +1,43 @@
+name: Manual Test Run
+
+on:
+  workflow_dispatch:  # Manually triggered from the GitHub UI
+
+jobs:
+  test:
+    runs-on: windows-latest  # Use a Windows runner
+    
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java (adjust the version if necessary)
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'  # Specify your Java version here
+
+      # Step 3: Cache Gradle dependencies
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle*', '**/settings.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # Step 4: Install dependencies (run Gradle build)
+      - name: Install dependencies
+        run: ./gradlew build -x test  # Skip tests during build to only install dependencies
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: gauge run Specs/  # Run the tests
+
+      # Step 6: Upload test reports as an artifact
+      - name: Upload Test Report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-report
+          path: reports/html-report  # Default path for Gradle test reports (can vary based on your setup)
