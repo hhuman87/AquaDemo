@@ -32,18 +32,24 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
-      # Step 3: Install Node.js (required for Gauge if you use npm)
+      # Step 3: Install Node.js (required for Gauge)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'  # You can use your desired Node.js version
 
-      # Step 4: Install Gauge (via npm or directly from the installer)
+      # Step 4: Install Gauge globally
       - name: Install Gauge
         run: |
           npm install -g gauge  # Install Gauge globally using npm
+          echo "Node path: $(npm bin -g)"  # Verify the npm global binary path
 
-      # Step 5: Run the tests in the Specs folder
+      # Step 5: Verify Gauge installation (this step checks if gauge is available)
+      - name: Verify Gauge installation
+        run: |
+          gauge --version  # This checks that the gauge command is available
+
+      # Step 6: Run the tests in the Specs folder
       - name: Run Gauge tests
         run: gauge run Specs/  # Run tests from the Specs folder
 
