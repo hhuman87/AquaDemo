@@ -27,20 +27,20 @@ public class HomePageSelectors {
 
     public SelenideElement burgerMenu_CloseButton = $x("//button[@id='react-burger-cross-btn']");
 
-    void validate_Logo() {
+    public void validate_Logo() {
         pageLogo.shouldBe(Condition.visible, Duration.ofMillis(5000));
     }
 
-    void validate_Title(String title) {
+    public void validate_Title(String title) {
         subTitle.shouldBe(Condition.visible, Duration.ofMillis(5000));
         subTitle.shouldHave(text(title));
     }
     
-    void select_Burger_Menu() {
+    public void select_Burger_Menu() {
         burgerMenu.click();
     }
 
-    void validate_Burger_Menu_List_Options() {
+    public void validate_Burger_Menu_List_Options() {
         sidebar_AllItems_Link.shouldBe(Condition.visible, Duration.ofMillis(5000));
         sidebar_AllItems_Link.shouldHave(text("All Items"));
 

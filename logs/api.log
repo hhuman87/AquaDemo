@@ -1,0 +1,120 @@
+07-01-2025 14:47:19.295 [Gauge] [INFO] Initializing concepts cache with 0 concepts
+07-01-2025 14:47:19.297 [Gauge] [INFO] Initializing specs cache with 1 specs
+07-01-2025 14:47:19.297 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 14:47:19.297 [Gauge] [INFO] Initializing steps cache with 1 steps
+07-01-2025 14:47:19.297 [Gauge] [INFO] Gauge daemon initialized and listening on port: 59377
+07-01-2025 14:47:19.297 [Gauge] [DEBUG] Watching directory: C:\Users\human\AquaProjects\aquatests\specs
+07-01-2025 14:47:19.297 [Gauge] [DEBUG] Found 1 files
+07-01-2025 14:47:24.310 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open SauceDemo"}
+07-01-2025 14:47:24.310 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open SauceDemo" parameterizedStepValue:"Open SauceDemo"}}
+07-01-2025 14:47:24.311 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Login to DemoSauce"}
+07-01-2025 14:47:24.317 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Login to DemoSauce" parameterizedStepValue:"Login to DemoSauce"}}
+07-01-2025 14:49:40.844 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Close browser"}
+07-01-2025 14:49:40.845 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Close browser" parameterizedStepValue:"Close browser"}}
+07-01-2025 14:50:18.122 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 14:50:18.125 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 14:50:20.916 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 14:50:20.920 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 14:50:22.319 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 14:50:22.320 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:30:15.677 [Gauge] [INFO] Initializing concepts cache with 0 concepts
+07-01-2025 17:30:15.678 [Gauge] [INFO] Initializing specs cache with 1 specs
+07-01-2025 17:30:15.678 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:30:15.678 [Gauge] [INFO] Initializing steps cache with 1 steps
+07-01-2025 17:30:15.678 [Gauge] [INFO] Gauge daemon initialized and listening on port: 59715
+07-01-2025 17:30:15.678 [Gauge] [DEBUG] Watching directory: C:\Users\human\AquaProjects\aquatests\specs
+07-01-2025 17:30:15.678 [Gauge] [DEBUG] Found 1 files
+07-01-2025 17:30:20.588 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open SauceDemo"}
+07-01-2025 17:30:20.588 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open SauceDemo" parameterizedStepValue:"Open SauceDemo"}}
+07-01-2025 17:30:20.591 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Login to DemoSauce"}
+07-01-2025 17:30:20.593 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Login to DemoSauce" parameterizedStepValue:"Login to DemoSauce"}}
+07-01-2025 17:30:20.594 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Close browser"}
+07-01-2025 17:30:20.595 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Close browser" parameterizedStepValue:"Close browser"}}
+07-01-2025 17:30:48.665 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:30:48.667 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:31:40.663 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:31:40.665 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:32:14.366 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:32:14.368 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:33:37.640 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:33:37.641 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:34:01.492 [Gauge] [DEBUG] Spec file removed: C:\Users\human\AquaProjects\aquatests\specs\specs.spec
+07-01-2025 17:34:01.492 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:39:03.664 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open <SauceDemo>"}
+07-01-2025 17:39:03.670 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open {}" parameterizedStepValue:"Open <SauceDemo>" parameters:"SauceDemo"}}
+07-01-2025 17:40:41.893 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open \"SauceDemo\""}
+07-01-2025 17:40:41.893 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open {}" parameterizedStepValue:"Open <SauceDemo>" parameters:"SauceDemo"}}
+07-01-2025 17:41:34.019 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:41:34.021 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:45:08.996 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:45:08.998 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:45:09.216 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:45:09.217 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:46:00.390 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open <u>"}
+07-01-2025 17:46:00.390 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open {}" parameterizedStepValue:"Open <u>" parameters:"u"}}
+07-01-2025 17:46:00.503 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open <ur>"}
+07-01-2025 17:46:00.503 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open {}" parameterizedStepValue:"Open <ur>" parameters:"ur"}}
+07-01-2025 17:46:00.854 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Open <url>"}
+07-01-2025 17:46:00.856 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Open {}" parameterizedStepValue:"Open <url>" parameters:"url"}}
+07-01-2025 17:48:22.893 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate the Burger Menu List on the HomePage"}
+07-01-2025 17:48:22.893 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate the Burger Menu List on the HomePage" parameterizedStepValue:"Validate the Burger Menu List on the HomePage"}}
+07-01-2025 17:49:25.734 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:49:25.736 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:49:27.715 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:27.715 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:27.716 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:27.716 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:27.722 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:27.722 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:27.968 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:27.978 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:27.979 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:27.980 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.048 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.055 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.056 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.056 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.400 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.400 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.403 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.403 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.411 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.411 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.442 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.452 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:28.453 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{}
+07-01-2025 17:49:28.453 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{}}
+07-01-2025 17:49:33.687 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:49:33.688 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:53:12.250 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate th Burger Menu List on the HomePage"}
+07-01-2025 17:53:12.250 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate th Burger Menu List on the HomePage" parameterizedStepValue:"Validate th Burger Menu List on the HomePage"}}
+07-01-2025 17:53:12.433 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate t Burger Menu List on the HomePage"}
+07-01-2025 17:53:12.433 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate t Burger Menu List on the HomePage" parameterizedStepValue:"Validate t Burger Menu List on the HomePage"}}
+07-01-2025 17:53:12.643 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate  Burger Menu List on the HomePage"}
+07-01-2025 17:53:12.643 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate  Burger Menu List on the HomePage" parameterizedStepValue:"Validate  Burger Menu List on the HomePage"}}
+07-01-2025 17:53:13.098 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate Burger Menu List on the HomePage"}
+07-01-2025 17:53:13.098 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate Burger Menu List on the HomePage" parameterizedStepValue:"Validate Burger Menu List on the HomePage"}}
+07-01-2025 17:53:23.911 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:53:23.913 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:53:51.071 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate tBurger Menu List on the HomePage"}
+07-01-2025 17:53:51.071 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate tBurger Menu List on the HomePage" parameterizedStepValue:"Validate tBurger Menu List on the HomePage"}}
+07-01-2025 17:53:51.090 [Gauge] [DEBUG] Api Request Received: messageType:GetAllStepsRequest messageId:2 allStepsRequest:{}
+07-01-2025 17:53:51.090 [Gauge] [DEBUG] Sending API response: messageType:GetAllStepResponse messageId:2 allStepsResponse:{allSteps:{stepValue:"Open {}" parameterizedStepValue:"Open <SauceDemo>" parameters:"SauceDemo"} allSteps:{stepValue:"Login to DemoSauce" parameterizedStepValue:"Login to DemoSauce"} allSteps:{stepValue:"Close browser" parameterizedStepValue:"Close browser"} allSteps:{stepValue:"Validate Burger Menu List on the HomePage" parameterizedStepValue:"Validate Burger Menu List on the HomePage"}}
+07-01-2025 17:53:51.105 [Gauge] [DEBUG] Api Request Received: messageType:GetAllConceptsRequest messageId:6 allConceptsRequest:{}
+07-01-2025 17:53:51.105 [Gauge] [DEBUG] Sending API response: messageType:GetAllConceptsResponse messageId:6 allConceptsResponse:{}
+07-01-2025 17:53:51.111 [Gauge] [DEBUG] Api Request Received: messageType:GetAllStepsRequest messageId:2 allStepsRequest:{}
+07-01-2025 17:53:51.111 [Gauge] [DEBUG] Sending API response: messageType:GetAllStepResponse messageId:2 allStepsResponse:{allSteps:{stepValue:"Open {}" parameterizedStepValue:"Open <SauceDemo>" parameters:"SauceDemo"} allSteps:{stepValue:"Login to DemoSauce" parameterizedStepValue:"Login to DemoSauce"} allSteps:{stepValue:"Close browser" parameterizedStepValue:"Close browser"} allSteps:{stepValue:"Validate Burger Menu List on the HomePage" parameterizedStepValue:"Validate Burger Menu List on the HomePage"}}
+07-01-2025 17:53:51.111 [Gauge] [DEBUG] Api Request Received: messageType:GetAllConceptsRequest messageId:6 allConceptsRequest:{}
+07-01-2025 17:53:51.111 [Gauge] [DEBUG] Sending API response: messageType:GetAllConceptsResponse messageId:6 allConceptsResponse:{}
+07-01-2025 17:53:51.341 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate thBurger Menu List on the HomePage"}
+07-01-2025 17:53:51.341 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate thBurger Menu List on the HomePage" parameterizedStepValue:"Validate thBurger Menu List on the HomePage"}}
+07-01-2025 17:53:51.342 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate thBurger Menu List on the HomePage"}
+07-01-2025 17:53:51.342 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate thBurger Menu List on the HomePage" parameterizedStepValue:"Validate thBurger Menu List on the HomePage"}}
+07-01-2025 17:53:51.456 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate theBurger Menu List on the HomePage"}
+07-01-2025 17:53:51.456 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate theBurger Menu List on the HomePage" parameterizedStepValue:"Validate theBurger Menu List on the HomePage"}}
+07-01-2025 17:53:51.457 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:{stepText:"Validate theBurger Menu List on the HomePage"}
+07-01-2025 17:53:51.457 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:{stepValue:{stepValue:"Validate theBurger Menu List on the HomePage" parameterizedStepValue:"Validate theBurger Menu List on the HomePage"}}
+07-01-2025 17:54:06.268 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:54:06.271 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:55:46.442 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+07-01-2025 17:55:46.444 [Gauge] [DEBUG] Spec file added / modified: C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
