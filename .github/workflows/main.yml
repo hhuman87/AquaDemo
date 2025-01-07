@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '21'  # Specify your Java version here
-          distribution: 'oraclejdk'  # Specify the JDK distribution
+          distribution: 'temurin'  # Specify the JDK distribution
 
       # Step 3: Cache Gradle dependencies
       - name: Cache Gradle dependencies
