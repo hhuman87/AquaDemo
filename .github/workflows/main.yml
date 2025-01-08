@@ -66,7 +66,7 @@ jobs:
           # Verify Gauge installation
           try {
             Write-Output "Verifying Gauge installation..."
-            gauge --version
+            & "C:\gauge\gauge.exe" --version
           } catch {
             Write-Error "Failed to verify Gauge installation: $_"
             exit 1
@@ -74,7 +74,15 @@ jobs:
 
       # Step 6: Verify Gauge installation
       - name: Verify Gauge installation
-        run: gauge --version  # Check if Gauge is installed successfully
+        run: |
+        
+          try {
+            Write-Output "Verifying Gauge installation..."
+            & "C:\gauge\gauge.exe" --version
+          } catch {
+            Write-Error "Failed to verify Gauge installation: $_"
+            exit 1
+          }
 
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
