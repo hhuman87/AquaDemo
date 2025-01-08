@@ -32,55 +32,68 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
-      # Step 3: Install Gauge (Direct Installation from MSI)
+
+      # Step 5: Install Gauge (Direct Installation from EXE)
       - name: Install Gauge
         run: |
-          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.2.7/gauge-1.2.7.windows.x64.msi -OutFile gauge-installer.msi
-          Start-Process msiexec.exe -ArgumentList '/i', 'gauge-installer.msi', '/quiet', '/norestart' -NoNewWindow -Wait
-          Remove-Item -Force gauge-installer.msi  # Clean up the installer
+        
+          # Set a timeout for the download (e.g., 5 minutes)
+          $downloadTimeout = 300  # 5 minutes in seconds
+          try {
+            Write-Output "Starting to download Gauge ZIP package..."
+            # Download the Gauge ZIP package with a timeout
+            Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.zip -OutFile gauge.zip -TimeoutSec $downloadTimeout
+            Write-Output "Download completed successfully."
+          } catch {
+            Write-Error "Download failed: $_"
+            exit 1
+          }
 
-      # Step 4: Verify Gauge installation
+          # Extract the ZIP package
+          try {
+            Write-Output "Extracting Gauge ZIP package..."
+            Expand-Archive -Path 'gauge.zip' -DestinationPath 'C:\gauge' -Force
+            Write-Output "Extraction completed successfully."
+          } catch {
+            Write-Error "Failed to extract ZIP package: $_"
+            exit 1
+          }
+
+          # Add Gauge to PATH (assuming C:\gauge is the extracted directory)
+          $env:PATH += ";C:\gauge"
+          Write-Output "Gauge added to PATH."
+
+          # Verify Gauge installation
+          try {
+            Write-Output "Verifying Gauge installation..."
+            & "C:\gauge\gauge.exe" --version
+          } catch {
+            Write-Error "Failed to verify Gauge installation: $_"
+            exit 1
+          }
+
+          # Clean up the downloaded ZIP file
+          Remove-Item -Force gauge.zip
+
+      # Step 6: Verify Gauge installation
       - name: Verify Gauge installation
-        run: gauge --version  # Check if Gauge is installed successfully
+        run: |
+        
+          try {
+            Write-Output "Verifying Gauge installation..."
+            & "C:\gauge\gauge.exe" --version
+          } catch {
+            Write-Error "Failed to verify Gauge installation: $_"
+            exit 1
+          }
 
-      # Step 5: Run the tests in the Specs folder
+      # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
-        run: gauge run Specs/  # Run tests from the Specs folder
+        run: gradle gauge  # Run tests from the Specs folder
 
-      # Step 6: Upload test reports as an artifact
+      # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: build/reports/tests/test  # Adjust to your report location if needed
-
-
-        
-
-      # Step 3: Install Node.js (required for Gauge)
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # You can use your desired Node.js version
-
-      # Step 4: Install Gauge globally
-      - name: Install Gauge
-        run: |
-          npm install -g gauge  # Install Gauge globally using npm
-          echo "Node path: $(npm bin -g)"  # Verify the npm global binary path
-
-      # Step 5: Verify Gauge installation (this step checks if gauge is available)
-      - name: Verify Gauge installation
-        run: |
-          gauge --version  # This checks that the gauge command is available
-
-      # Step 6: Run the tests in the Specs folder
-      - name: Run Gauge tests
-        run: gauge run Specs/  # Run tests from the Specs folder
-
-      # Step 6: Upload test reports as an artifact
-      - name: Upload Test Report as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: html-report
-          path: reports/html-report  # Default path for Gradle test reports (can vary based on your setup)
+          path: reports/html-report  # Adjust to your report location if needed
