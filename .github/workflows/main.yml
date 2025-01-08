@@ -1,0 +1,86 @@
+name: Manual Test Run
+
+on:
+  workflow_dispatch:  # Manually triggered from the GitHub UI
+
+jobs:
+  test:
+    runs-on: windows-latest  # Use a Windows runner
+    
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java (adjust the version if necessary)
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'  # Specify your Java version here
+          distribution: 'temurin'  # Specify the JDK distribution
+
+      # Step 3: Cache Gradle dependencies
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle*', '**/settings.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # Step 4: Install dependencies (run Gradle build)
+      - name: Install dependencies
+        run: ./gradlew build -x test  # Skip tests during build to only install dependencies
+
+      # Step 3: Install Gauge (Direct Installation from MSI)
+      - name: Install Gauge
+        run: |
+          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.2.7/gauge-1.2.7.windows.x64.msi -OutFile gauge-installer.msi
+          Start-Process msiexec.exe -ArgumentList '/i', 'gauge-installer.msi', '/quiet', '/norestart' -NoNewWindow -Wait
+          Remove-Item -Force gauge-installer.msi  # Clean up the installer
+
+      # Step 4: Verify Gauge installation
+      - name: Verify Gauge installation
+        run: gauge --version  # Check if Gauge is installed successfully
+
+      # Step 5: Run the tests in the Specs folder
+      - name: Run Gauge tests
+        run: gauge run Specs/  # Run tests from the Specs folder
+
+      # Step 6: Upload test reports as an artifact
+      - name: Upload Test Report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: build/reports/tests/test  # Adjust to your report location if needed
+
+
+        
+
+      # Step 3: Install Node.js (required for Gauge)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # You can use your desired Node.js version
+
+      # Step 4: Install Gauge globally
+      - name: Install Gauge
+        run: |
+          npm install -g gauge  # Install Gauge globally using npm
+          echo "Node path: $(npm bin -g)"  # Verify the npm global binary path
+
+      # Step 5: Verify Gauge installation (this step checks if gauge is available)
+      - name: Verify Gauge installation
+        run: |
+          gauge --version  # This checks that the gauge command is available
+
+      # Step 6: Run the tests in the Specs folder
+      - name: Run Gauge tests
+        run: gauge run Specs/  # Run tests from the Specs folder
+
+      # Step 6: Upload test reports as an artifact
+      - name: Upload Test Report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-report
+          path: reports/html-report  # Default path for Gradle test reports (can vary based on your setup)
