@@ -32,12 +32,17 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
-      # Step 3: Install Gauge (Direct Installation from MSI)
+      # Step 3: Install Gauge (Direct Installation from EXE)
       - name: Install Gauge
         run: |
-          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.2.7/gauge-1.2.7.windows.x64.msi -OutFile gauge-installer.msi
-          Start-Process msiexec.exe -ArgumentList '/i', 'gauge-installer.msi', '/quiet', '/norestart' -NoNewWindow -Wait
-          Remove-Item -Force gauge-installer.msi  # Clean up the installer
+          # Download the Gauge installer
+          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.exe -OutFile gauge-installer.exe
+          
+          # Run the installer
+          Start-Process -FilePath 'gauge-installer.exe' -ArgumentList '/quiet', '/norestart' -NoNewWindow -Wait
+          
+          # Clean up the installer
+          Remove-Item -Force gauge-installer.exe
 
       # Step 4: Verify Gauge installation
       - name: Verify Gauge installation
