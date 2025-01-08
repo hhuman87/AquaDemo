@@ -72,9 +72,6 @@ jobs:
             exit 1
           }
 
-          # Clean up the downloaded ZIP file
-          Remove-Item -Force gauge.zip
-
       # Step 6: Verify Gauge installation
       - name: Verify Gauge installation
         run: gauge --version  # Check if Gauge is installed successfully
