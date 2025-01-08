@@ -32,15 +32,27 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
-      # Step 5: Install Gauge (Direct Installation from EXE)
+
+# Step 5: Install Gauge (Direct Installation from EXE)
       - name: Install Gauge
         run: |
-          # Download the Gauge installer
-          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.exe -OutFile gauge-installer.exe
-          
-          # Run the installer
-          Start-Process -FilePath 'gauge-installer.exe' -ArgumentList '/quiet', '/norestart' -NoNewWindow -Wait
-          
+          # Download the Gauge installer with a timeout
+          $downloadTimeout = 300  # 5 minutes in seconds
+          try {
+            Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.exe -OutFile gauge-installer.exe -TimeoutSec $downloadTimeout
+          } catch {
+            Write-Error "Download timed out"
+            exit 1
+          }
+    
+          # Run the installer with logging to capture more info
+          Start-Process -FilePath 'gauge-installer.exe' -ArgumentList '/quiet', '/norestart', '/log', 'gauge-install.log' -NoNewWindow -Wait
+    
+          # Check if the installation log exists
+          if (Test-Path 'gauge-install.log') {
+            Get-Content 'gauge-install.log' | Write-Host
+          }
+
           # Clean up the installer
           Remove-Item -Force gauge-installer.exe
 
