@@ -53,6 +53,17 @@ jobs:
             Get-Content 'gauge-install.log' | Write-Host
           }
 
+          # Add a short delay to ensure the installer process is fully completed
+          Start-Sleep -Seconds 5  # Wait 5 seconds before attempting cleanup
+    
+          # Check if the installer process is still running
+          $installerProcess = Get-Process | Where-Object { $_.Path -like '*gauge-installer.exe*' }
+          if ($installerProcess) {
+            Write-Host "Installer process is still running, waiting for it to complete."
+            # Wait for the process to exit before proceeding
+            $installerProcess | Wait-Process
+          }
+
           # Clean up the installer
           Remove-Item -Force gauge-installer.exe
 
