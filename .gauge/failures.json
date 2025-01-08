@@ -1,9 +1,11 @@
 {
 	"Args": [
 		"run",
-		"--machine-readable",
-		"--hide-suggestion",
-		"--simple-console"
+		"--env",
+		"default",
+		"--dir",
+		"C:\\Users\\human\\AquaProjects\\aquatests",
+		"--verbose"
 	],
 	"FailedItems": []
 }

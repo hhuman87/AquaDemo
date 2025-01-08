@@ -1,8 +1,13 @@
 <testsuites>
-	<testsuite id="1" tests="2" failures="0" package="C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec" time="6.661" timestamp="2025-01-07T18:05:34" name="SauceDemo" errors="0" hostname="HermanLaptop">
+	<testsuite id="1" tests="1" failures="0" package="C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec" time="3.289" timestamp="2025-01-08T19:31:44" name="SauceDemo" errors="0" hostname="HermanLaptop">
 		<properties></properties>
-		<testcase classname="SauceDemo" name="Login to SauceDemo" time="3.390"></testcase>
-		<testcase classname="SauceDemo" name="Validate the Burger Menu List on the HomePage" time="3.271"></testcase>
+		<testcase classname="SauceDemo" name="Login to SauceDemo" time="3.289"></testcase>
+		<system-out></system-out>
+		<system-err></system-err>
+	</testsuite>
+	<testsuite id="2" tests="1" failures="0" package="C:\Users\human\AquaProjects\aquatests\specs\SauceDemo1.spec" time="2.767" timestamp="2025-01-08T19:31:44" name="SauceDemo1" errors="0" hostname="HermanLaptop">
+		<properties></properties>
+		<testcase classname="SauceDemo1" name="Validate the Burger Menu List on the HomePage" time="2.767"></testcase>
 		<system-out></system-out>
 		<system-err></system-err>
 	</testsuite>

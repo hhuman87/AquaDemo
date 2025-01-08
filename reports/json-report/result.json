@@ -1,0 +1,258 @@
+{
+	"projectName": "aquatests",
+	"timestamp": "Jan 8, 2025 at 7:31pm",
+	"successRate": 100,
+	"environment": "default",
+	"tags": "",
+	"executionTime": 6858,
+	"executionStatus": "passed",
+	"specResults": [
+		{
+			"specHeading": "SauceDemo",
+			"fileName": "C:\\Users\\human\\AquaProjects\\aquatests\\specs\\SauceDemo.spec",
+			"tags": [
+				"SauceDemo"
+			],
+			"executionTime": 3289,
+			"executionStatus": "passed",
+			"scenarios": [
+				{
+					"scenarioHeading": "Login to SauceDemo",
+					"tags": [
+						"01"
+					],
+					"executionTime": 3289,
+					"executionStatus": "passed",
+					"contexts": [],
+					"teardowns": [],
+					"items": [
+						{
+							"itemType": "step",
+							"stepText": "Open \"SauceDemo\"",
+							"parameters": [
+								{
+									"parameterType": "static",
+									"name": "",
+									"value": "SauceDemo",
+									"table": null
+								}
+							],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 2897,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						},
+						{
+							"itemType": "step",
+							"stepText": "Login to DemoSauce",
+							"parameters": [],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 254,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						},
+						{
+							"itemType": "step",
+							"stepText": "Close browser",
+							"parameters": [],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 138,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						}
+					],
+					"beforeScenarioHookFailure": null,
+					"beforeScenarioHookMessages": [],
+					"afterScenarioHookFailure": null,
+					"afterScenarioHookMessages": [],
+					"skipErrors": [],
+					"tableRowIndex": -1
+				}
+			],
+			"isTableDriven": false,
+			"datatable": null,
+			"beforeSpecHookFailure": null,
+			"beforeSpecHookMessages": [],
+			"afterSpecHookFailure": null,
+			"afterSpecHookMessages": [],
+			"passedScenarioCount": 1,
+			"failedScenarioCount": 0,
+			"skippedScenarioCount": 0
+		},
+		{
+			"specHeading": "SauceDemo1",
+			"fileName": "C:\\Users\\human\\AquaProjects\\aquatests\\specs\\SauceDemo1.spec",
+			"tags": [
+				"SauceDemo1"
+			],
+			"executionTime": 2767,
+			"executionStatus": "passed",
+			"scenarios": [
+				{
+					"scenarioHeading": "Validate the Burger Menu List on the HomePage",
+					"tags": [
+						"02"
+					],
+					"executionTime": 2767,
+					"executionStatus": "passed",
+					"contexts": [],
+					"teardowns": [],
+					"items": [
+						{
+							"itemType": "step",
+							"stepText": "Open \"SauceDemo\"",
+							"parameters": [
+								{
+									"parameterType": "static",
+									"name": "",
+									"value": "SauceDemo",
+									"table": null
+								}
+							],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 1883,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						},
+						{
+							"itemType": "step",
+							"stepText": "Login to DemoSauce",
+							"parameters": [],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 200,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						},
+						{
+							"itemType": "step",
+							"stepText": "Validate the Burger Menu List on the HomePage",
+							"parameters": [],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 554,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						},
+						{
+							"itemType": "step",
+							"stepText": "Close browser",
+							"parameters": [],
+							"table": null,
+							"beforeStepHookFailure": null,
+							"beforeStepHookMessages": [],
+							"afterStepHookFailure": null,
+							"afterStepHookMessages": [],
+							"result": {
+								"status": "passed",
+								"stackTrace": "",
+								"screenshot": "",
+								"errorMessage": "",
+								"executionTime": 130,
+								"skippedReason": "",
+								"messages": [],
+								"errorType": "assertion",
+								"ScreenshotFile": ""
+							}
+						}
+					],
+					"beforeScenarioHookFailure": null,
+					"beforeScenarioHookMessages": [],
+					"afterScenarioHookFailure": null,
+					"afterScenarioHookMessages": [],
+					"skipErrors": [],
+					"tableRowIndex": -1
+				}
+			],
+			"isTableDriven": false,
+			"datatable": null,
+			"beforeSpecHookFailure": null,
+			"beforeSpecHookMessages": [],
+			"afterSpecHookFailure": null,
+			"afterSpecHookMessages": [],
+			"passedScenarioCount": 1,
+			"failedScenarioCount": 0,
+			"skippedScenarioCount": 0
+		}
+	],
+	"beforeSuiteHookFailure": null,
+	"beforeSuiteHookMessages": [],
+	"afterSuiteHookFailure": null,
+	"afterSuiteHookMessages": [],
+	"passedSpecsCount": 2,
+	"failedSpecsCount": 0,
+	"skippedSpecsCount": 0,
+	"passedScenariosCount": 2,
+	"failedScenariosCount": 0,
+	"skippedScenariosCount": 0
+}

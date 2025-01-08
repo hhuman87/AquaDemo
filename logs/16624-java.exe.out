@@ -1,0 +1,235 @@
+{"logLevel":"debug","message":"multithreading is set to false"}
+{"logLevel":"debug","message":"Using reflection to scan dependencies for gauge implementations..."}
+[ForkJoinPool.commonPool-worker-16] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/classes/java/main. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-16] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/classes/java/main]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-16] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/resources/test. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-16] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/resources/test]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-6] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/resources/main. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-6] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/resources/main]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+{"logLevel":"debug","message":"gauge-java took 1913milliseconds to load and scan. This should be less than 'runner_connection_timeout' config value."}
+{"logLevel":"debug","message":"run 'gauge config runner_connection_timeout' and verify that it is < 1913"}
+{"logLevel":"debug","message":"starting gRPC server..."}
+{"logLevel":"debug","message":"started gRPC server on port 61109"}
+{"logLevel":"info","message":"Listening on port:61109"}
+[pool-1-thread-1] INFO org.reflections.Reflections - Reflections took 1828 ms to scan 136 urls, producing 10119 keys and 69926 values
+{"logLevel":"debug","message":"Scanning packages for steps"}
+{"logLevel":"debug","message":"Comparing 'gaugeSteps.BrowserSteps.openBrowser' and 'gaugeSteps.BrowserSteps.openBrowser'"}
+{"logLevel":"debug","message":"Found Open {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'gaugeSteps.BrowserSteps.closeBrowser' and 'gaugeSteps.BrowserSteps.closeBrowser'"}
+{"logLevel":"debug","message":"Found Close browser in current project scope."}
+{"logLevel":"debug","message":"Comparing 'gaugeSteps.SauceDemoSteps.loginToSauceDemo' and 'gaugeSteps.SauceDemoSteps.loginToSauceDemo'"}
+{"logLevel":"debug","message":"Found Login to DemoSauce in current project scope."}
+{"logLevel":"debug","message":"Comparing 'gaugeSteps.SauceDemoSteps.validateBurgerMenuList' and 'gaugeSteps.SauceDemoSteps.validateBurgerMenuList'"}
+{"logLevel":"debug","message":"Found Validate the Burger Menu List on the HomePage in current project scope."}
+{"logLevel":"debug","message":"Scanning packages for hooks"}
+{"logLevel":"debug","message":"Scanned steps (using static parsing + reflections): "}
+{"logLevel":"debug","message":"\tOpen {} : public void openBrowser(String url)"}
+{"logLevel":"debug","message":"\tLogin to DemoSauce : public void loginToSauceDemo()"}
+{"logLevel":"debug","message":"\tClose browser : public void closeBrowser()"}
+{"logLevel":"debug","message":"\tValidate the Burger Menu List on the HomePage : public void validateBurgerMenuList()"}
+[ForkJoinPool.commonPool-worker-7] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/classes/java/main. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-7] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/classes/java/main]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-7] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/resources/test. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-7] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/resources/test]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-17] WARN org.reflections.Reflections - could not create Dir using com.thoughtworks.gauge.scan.ClasspathScanner$1@112b0906 from url file:/C:/Users/human/AquaProjects/aquatests/build/resources/main. skipping.
+java.lang.NullPointerException: Cannot invoke "java.io.File.isDirectory()" because "file" is null
+	at com.thoughtworks.gauge.scan.ClasspathScanner$1.createDir(ClasspathScanner.java:48)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:103)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[ForkJoinPool.commonPool-worker-17] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/C:/Users/human/AquaProjects/aquatests/build/resources/main]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:113)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:95)
+	at org.reflections.Reflections.lambda$scan$2(Reflections.java:176)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[pool-2-thread-1] INFO org.reflections.Reflections - Reflections took 860 ms to scan 136 urls, producing 9991 keys and 43739 values
+{"logLevel":"debug","message":"Executing 'Open {}' using 'class gaugeSteps.BrowserSteps.openBrowser"}
+[pool-2-thread-1] INFO com.codeborne.selenide.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 66 - let's create a new webdriver
+Jan 08, 2025 6:27:38 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 130; Please update to a Selenium version that supports CDP version 131
+[pool-2-thread-1] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.26.0 / chrome 131.0.6778.205 windows
+{"logLevel":"debug","message":"Executing 'Login to DemoSauce' using 'class gaugeSteps.SauceDemoSteps.loginToSauceDemo"}
+{"logLevel":"debug","message":"Executing 'Close browser' using 'class gaugeSteps.BrowserSteps.closeBrowser"}
+{"logLevel":"debug","message":"Executing 'Open {}' using 'class gaugeSteps.BrowserSteps.openBrowser"}
+[pool-2-thread-1] INFO com.codeborne.selenide.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 66 - let's create a new webdriver
+Jan 08, 2025 6:27:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 130; Please update to a Selenium version that supports CDP version 131
+[pool-2-thread-1] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.26.0 / chrome 131.0.6778.205 windows
+{"logLevel":"debug","message":"Executing 'Login to DemoSauce' using 'class gaugeSteps.SauceDemoSteps.loginToSauceDemo"}
+{"logLevel":"debug","message":"Executing 'Validate the Burger Menu List on the HomePage' using 'class gaugeSteps.SauceDemoSteps.validateBurgerMenuList"}
+{"logLevel":"debug","message":"Executing 'Close browser' using 'class gaugeSteps.BrowserSteps.closeBrowser"}
+{"logLevel":"debug","message":"Killing Java runner..."}
+{"logLevel":"debug","message":"Stopping execution pool..."}
+{"logLevel":"debug","message":"Shutting down grpc server..."}
+{"logLevel":"debug","message":"Runner killed gracefully."}

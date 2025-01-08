@@ -1,10 +1,16 @@
+buildscript {
+    dependencies {
+        classpath "gradle.plugin.org.gauge.gradle:gauge-gradle-plugin:1.8.2"
+    }
+}
+
 plugins {
     id 'java'
     id 'org.gauge' version '1.8.2'
 }
 
-group 'com.example'
-version '1.0-SNAPSHOT'
+group = 'aquatests'
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -15,13 +21,16 @@ ext {
 }
 
 java {
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
-sourceCompatibility = '21'
-targetCompatibility = '21'
+configurations.configureEach {
+    exclude group: "junit"
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -31,6 +40,8 @@ dependencies {
     testImplementation('com.codeborne:selenide:7.6.0')
     testImplementation('org.slf4j:slf4j-simple:2.0.13')
 
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
@@ -53,8 +64,30 @@ dependencies {
 
     implementation group: 'com.thoughtworks.gauge', name: 'gauge-java', version: '0.11.2'
 
+    testRuntimeOnly 'com.codeborne:selenide:7.6.0'
 }
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+test {
+    doFirst {
+        println "Running tests for specs in: ${project.hasProperty('specsDir') ? project.specsDir : 'default directory'}"
+    }
+}
+
+gauge {
+    specsDir = 'specs'
+    inParallel = false
+    nodes = 1
+    env = 'default'
+    additionalFlags = '--verbose'
+}
+
+tasks.register('runGaugeTests', Exec) {
+    commandLine 'gauge', 'run', 'specs/'
 }
