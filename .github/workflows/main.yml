@@ -32,6 +32,31 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
+      # Step 3: Install Gauge (Direct Installation from MSI)
+      - name: Install Gauge
+        run: |
+          Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.2.7/gauge-1.2.7.windows.x64.msi -OutFile gauge-installer.msi
+          Start-Process msiexec.exe -ArgumentList '/i', 'gauge-installer.msi', '/quiet', '/norestart' -NoNewWindow -Wait
+          Remove-Item -Force gauge-installer.msi  # Clean up the installer
+
+      # Step 4: Verify Gauge installation
+      - name: Verify Gauge installation
+        run: gauge --version  # Check if Gauge is installed successfully
+
+      # Step 5: Run the tests in the Specs folder
+      - name: Run Gauge tests
+        run: gauge run Specs/  # Run tests from the Specs folder
+
+      # Step 6: Upload test reports as an artifact
+      - name: Upload Test Report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: build/reports/tests/test  # Adjust to your report location if needed
+
+
+        
+
       # Step 3: Install Node.js (required for Gauge)
       - name: Set up Node.js
         uses: actions/setup-node@v3
