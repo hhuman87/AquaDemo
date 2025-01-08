@@ -96,4 +96,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: build/reports/tests/test  # Adjust to your report location if needed
+          path: reports/html-report  # Adjust to your report location if needed
