@@ -33,39 +33,61 @@ jobs:
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
 
-# Step 5: Install Gauge (Direct Installation from EXE)
+      # Step 5: Install Gauge (Direct Installation from EXE)
       - name: Install Gauge
         run: |
-          # Download the Gauge installer with a timeout
-          $downloadTimeout = 300  # 5 minutes in seconds
-          try {
-            Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.exe -OutFile gauge-installer.exe -TimeoutSec $downloadTimeout
-          } catch {
-            Write-Error "Download timed out"
-            exit 1
-          }
+ 
+           # Set a timeout for the download (e.g., 5 minutes)
+           $downloadTimeout = 300  # 5 minutes in seconds
+           try {
+             Write-Output "Starting to download Gauge installer..."
+  
+           # Download the Gauge installer with a timeout
+             Invoke-WebRequest -Uri https://github.com/getgauge/gauge/releases/download/v1.6.11/gauge-1.6.11-windows.x86_64.exe -OutFile gauge-installer.exe -TimeoutSec $downloadTimeout
+             Write-Output "Download completed successfully."
+           } catch {
+             Write-Error "Download failed: $_"
+             exit 1
+           }
     
-          # Run the installer with logging to capture more info
-          Start-Process -FilePath 'gauge-installer.exe' -ArgumentList '/quiet', '/norestart', '/log', 'gauge-install.log' -NoNewWindow -Wait
-    
-          # Check if the installation log exists
-          if (Test-Path 'gauge-install.log') {
-            Get-Content 'gauge-install.log' | Write-Host
-          }
+           # Run the installer with logging to capture more info
+           try {
+             Write-Output "Starting Gauge installer..."
+             Start-Process -FilePath 'gauge-installer.exe' -ArgumentList '/quiet', '/norestart', '/log', 'gauge-install.log' -NoNewWindow -Wait
+             Write-Output "Gauge installation completed."
+           } catch {
+             Write-Error "Installer failed: $_"
+             exit 1
+           }
 
-          # Add a short delay to ensure the installer process is fully completed
-          Start-Sleep -Seconds 5  # Wait 5 seconds before attempting cleanup
-    
-          # Check if the installer process is still running
-          $installerProcess = Get-Process | Where-Object { $_.Path -like '*gauge-installer.exe*' }
-          if ($installerProcess) {
-            Write-Host "Installer process is still running, waiting for it to complete."
-            # Wait for the process to exit before proceeding
-            $installerProcess | Wait-Process
-          }
+           # Check if the installation log exists and output it
+           if (Test-Path 'gauge-install.log') {
+             Write-Output "Gauge installation log:"
+             Get-Content 'gauge-install.log' | Write-Output
+           } else {
+             Write-Error "Installation log not found."
+           }
 
-          # Clean up the installer
-          Remove-Item -Force gauge-installer.exe
+           # Add a short delay to ensure the installer process is fully completed
+           Write-Output "Waiting 5 seconds before cleanup."
+           Start-Sleep -Seconds 5  # Wait 5 seconds before attempting cleanup
+    
+           # Check if the installer process is still running
+           $installerProcess = Get-Process | Where-Object { $_.Path -like '*gauge-installer.exe*' }
+           if ($installerProcess) {
+             Write-Output "Installer process is still running, waiting for it to complete."
+           # Wait for the process to exit before proceeding
+           $installerProcess | Wait-Process
+           }
+
+           # Clean up the installer
+           Write-Output "Attempting to remove the installer."
+           try {
+             Remove-Item -Force gauge-installer.exe
+             Write-Output "Installer removed successfully."
+           } catch {
+             Write-Error "Failed to remove installer: $_"
+           }
 
       # Step 6: Verify Gauge installation
       - name: Verify Gauge installation
