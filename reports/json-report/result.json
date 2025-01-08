@@ -1,10 +1,10 @@
 {
 	"projectName": "aquatests",
-	"timestamp": "Jan 8, 2025 at 7:31pm",
+	"timestamp": "Jan 8, 2025 at 11:59pm",
 	"successRate": 100,
 	"environment": "default",
 	"tags": "",
-	"executionTime": 6858,
+	"executionTime": 23042,
 	"executionStatus": "passed",
 	"specResults": [
 		{
@@ -13,7 +13,7 @@
 			"tags": [
 				"SauceDemo"
 			],
-			"executionTime": 3289,
+			"executionTime": 11459,
 			"executionStatus": "passed",
 			"scenarios": [
 				{
@@ -21,7 +21,7 @@
 					"tags": [
 						"01"
 					],
-					"executionTime": 3289,
+					"executionTime": 11459,
 					"executionStatus": "passed",
 					"contexts": [],
 					"teardowns": [],
@@ -47,7 +47,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 2897,
+								"executionTime": 11047,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -68,7 +68,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 254,
+								"executionTime": 262,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -89,7 +89,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 138,
+								"executionTime": 150,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -121,7 +121,7 @@
 			"tags": [
 				"SauceDemo1"
 			],
-			"executionTime": 2767,
+			"executionTime": 10477,
 			"executionStatus": "passed",
 			"scenarios": [
 				{
@@ -129,7 +129,7 @@
 					"tags": [
 						"02"
 					],
-					"executionTime": 2767,
+					"executionTime": 10477,
 					"executionStatus": "passed",
 					"contexts": [],
 					"teardowns": [],
@@ -155,7 +155,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 1883,
+								"executionTime": 9483,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -176,7 +176,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 200,
+								"executionTime": 261,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -197,7 +197,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 554,
+								"executionTime": 583,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
@@ -218,7 +218,7 @@
 								"stackTrace": "",
 								"screenshot": "",
 								"errorMessage": "",
-								"executionTime": 130,
+								"executionTime": 150,
 								"skippedReason": "",
 								"messages": [],
 								"errorType": "assertion",
