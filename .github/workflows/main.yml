@@ -94,6 +94,10 @@ jobs:
             exit 1
           }
 
+      - name: Debug working directory
+        run: |
+          echo "Current directory: $(Get-Location)"
+
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
         run: |
