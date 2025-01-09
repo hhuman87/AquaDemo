@@ -80,6 +80,12 @@ jobs:
           Write-Output "Applying the Gradle Gauge plugin..."
           & "./gradlew" gauge
 
+      - name: Run tests
+        run: |
+          # Run Gauge tests
+          & "C:\gauge\gauge.exe" run specs
+        continue-on-error: true  # Continue even if running tests fails
+
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
         run: |
