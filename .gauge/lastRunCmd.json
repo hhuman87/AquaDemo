@@ -1,9 +1,10 @@
 [
-	"C:\\Program Files\\Gauge\\bin\\gauge.exe",
+	"gauge",
 	"run",
-	"--machine-readable",
-	"--hide-suggestion",
-	"--simple-console",
-	"specs/",
-	"C:/Users/human/AquaProjects/aquatests/specs"
+	"--env",
+	"default",
+	"--dir",
+	"C:\\Users\\human\\AquaProjects\\aquatests",
+	"--verbose",
+	"specs"
 ]
