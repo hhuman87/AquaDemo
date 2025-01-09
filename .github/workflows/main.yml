@@ -98,13 +98,10 @@ jobs:
       - name: Run Gauge tests
         run: |
         
-          try {
-             Write-Output "Running Gauge Tests..."
-            & "C:\Users\human\AquaProjects\aquatests" gradle clean build gauge -PspecsDir="specs"
-          } catch {
-            Write-Error "Failed to run Gauge tests: $_"
-            exit 1
-          }
+          echo "Running command from the project directory"
+          # Your terminal command here
+          gradle clean build gauge -PspecsDir="specs"
+          working-directory: ./aquatests
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
