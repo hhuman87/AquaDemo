@@ -32,7 +32,7 @@ configurations.configureEach {
     exclude group: "junit"
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
@@ -86,8 +86,4 @@ gauge {
     nodes = 1
     env = 'default'
     additionalFlags = '--verbose'
-}
-
-tasks.register('runGaugeTests', Exec) {
-    commandLine 'gauge', 'run', 'specs/'
 }
