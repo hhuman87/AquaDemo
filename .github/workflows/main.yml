@@ -32,11 +32,9 @@ jobs:
       - name: Install dependencies
         run: ./gradlew build -x test  # Skip tests during build to only install dependencies
 
-
       # Step 5: Install Gauge (Direct Installation from EXE)
       - name: Install Gauge
         run: |
-        
           # Set a timeout for the download (e.g., 5 minutes)
           $downloadTimeout = 300  # 5 minutes in seconds
           try {
@@ -75,37 +73,20 @@ jobs:
           # Clean up the downloaded ZIP file
           Remove-Item -Force gauge.zip
 
+      # Step 6: Install Gradle Gauge plugin
       - name: Install Gradle Gauge plugin
         run: |
-        
           # Run the Gradle command to install the Gauge plugin
           Write-Output "Applying the Gradle Gauge plugin..."
-          & "./gradlew" -q --no-daemon build
-
-      # Step 6: Verify Gauge installation
-      - name: Verify Gauge installation
-        run: |
-        
-          try {
-            Write-Output "Verifying Gauge installation..."
-            & "C:\gauge\gauge.exe" --version
-          } catch {
-            Write-Error "Failed to verify Gauge installation: $_"
-            exit 1
-          }
-
-      - name: Debug working directory
-        run: |
-          echo "Current directory: $(Get-Location)"
+          & "./gradlew" gauge
 
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
         run: |
-        
-          echo "Running command from the project directory"
-          # Your terminal command here
-          gradle clean build gauge -PspecsDir="specs"
-        working-directory: D:\a\AquaDemo\AquaDemo
+          echo "Running Gauge tests from the 'specs' folder"
+          # Run Gauge tests from the 'specs' directory
+          & "C:\gauge\gauge.exe" run specs
+        working-directory: ./AquaDemo/aquatests  # Ensure you're in the correct working directory
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
