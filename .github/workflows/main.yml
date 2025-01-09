@@ -105,7 +105,7 @@ jobs:
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: build/reports/html-report  # Adjust to your report location if needed
