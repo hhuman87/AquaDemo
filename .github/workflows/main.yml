@@ -96,7 +96,15 @@ jobs:
 
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
-        run: gradle clean build gauge -PspecsDir="specs"  # Run tests from the Specs folder
+        run: |
+        
+          try {
+             Write-Output "Running Gauge Tests..."
+            & "C:\Users\human\AquaProjects\aquatests" gradle clean build gauge -PspecsDir="specs"
+          } catch {
+            Write-Error "Failed to run Gauge tests: $_"
+            exit 1
+          }
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
