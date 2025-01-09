@@ -101,7 +101,7 @@ jobs:
           echo "Running command from the project directory"
           # Your terminal command here
           gradle clean build gauge -PspecsDir="specs"
-        working-directory: ./aquatests
+        working-directory: AquaDemo
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
