@@ -85,15 +85,8 @@ jobs:
         run: |
           echo "Running Gauge tests from the 'specs' folder"
           # Run Gauge tests from the 'specs' directory
-          & "C:\gauge\gauge.exe" run specs
+          & "D:\a\AquaDemo\AquaDemo" ./gradlew clean build gauge -PspecsDir="specs"
         working-directory: D:\a\AquaDemo\AquaDemo  # Ensure you're in the correct working directory
-
-      - name: Run Gauge tests form command
-        run: |
-          echo "Running command from the project directory"
-          # Your terminal command here
-          gradle clean build gauge -PspecsDir="specs"
-        working-directory: D:\a\AquaDemo\AquaDemo
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
