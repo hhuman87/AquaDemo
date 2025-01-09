@@ -1,1 +1,0 @@
-var index = {"Tags":{"01":["specs/SauceDemo.html"],"02":["specs/SauceDemo1.html"],"SauceDemo":["specs/SauceDemo.html"],"SauceDemo1":["specs/SauceDemo1.html"]},"Specs":{"SauceDemo":["specs/SauceDemo.html"],"SauceDemo1":["specs/SauceDemo1.html"]}};
