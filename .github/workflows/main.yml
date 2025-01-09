@@ -76,9 +76,7 @@ jobs:
           Remove-Item -Force gauge.zip
 
       - name: Set up Gradle
-        uses: gradle/wrapper-validation-action@v1
-        with:
-          gradle-version: '8.1.1'  # You can choose the appropriate Gradle version here
+        uses: gradle/wrapper-validation-action@v3
 
       - name: Install Gradle Gauge plugin
         run: |
