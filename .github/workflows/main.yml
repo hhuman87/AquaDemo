@@ -89,7 +89,7 @@ jobs:
 
       # Step 7: Run the tests in the Specs folder
       - name: Run Gauge tests
-        run: gradle gauge  # Run tests from the Specs folder
+        run: gradle clean build gauge  # Run tests from the Specs folder
 
       # Step 8: Upload test reports as an artifact
       - name: Upload Test Report as artifact
