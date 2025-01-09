@@ -75,15 +75,12 @@ jobs:
           # Clean up the downloaded ZIP file
           Remove-Item -Force gauge.zip
 
-      - name: Set up Gradle
-        uses: gradle/wrapper-validation-action@v3
-
       - name: Install Gradle Gauge plugin
         run: |
         
           # Run the Gradle command to install the Gauge plugin
           Write-Output "Applying the Gradle Gauge plugin..."
-          & "gradlew" -q --no-daemon build
+          & "./gradlew" -q --no-daemon build
 
       # Step 6: Verify Gauge installation
       - name: Verify Gauge installation
