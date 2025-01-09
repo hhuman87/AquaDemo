@@ -1,8 +1,8 @@
-09-01-2025 13:57:32.863 [Gauge] [INFO] Initializing concepts cache with 0 concepts
-09-01-2025 13:57:32.865 [Gauge] [INFO] Initializing specs cache with 2 specs
-09-01-2025 13:57:32.865 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
-09-01-2025 13:57:32.865 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\SauceDemo1.spec
-09-01-2025 13:57:32.865 [Gauge] [INFO] Initializing steps cache with 2 steps
-09-01-2025 13:57:32.865 [Gauge] [INFO] Gauge daemon initialized and listening on port: 56053
-09-01-2025 13:57:32.867 [Gauge] [DEBUG] Watching directory: C:\Users\human\AquaProjects\aquatests\specs
-09-01-2025 13:57:32.868 [Gauge] [DEBUG] Found 2 files
+09-01-2025 14:55:27.341 [Gauge] [INFO] Initializing concepts cache with 0 concepts
+09-01-2025 14:55:27.342 [Gauge] [INFO] Initializing specs cache with 2 specs
+09-01-2025 14:55:27.342 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\SauceDemo.spec
+09-01-2025 14:55:27.342 [Gauge] [DEBUG] Adding specs from C:\Users\human\AquaProjects\aquatests\specs\SauceDemo1.spec
+09-01-2025 14:55:27.342 [Gauge] [INFO] Initializing steps cache with 2 steps
+09-01-2025 14:55:27.342 [Gauge] [INFO] Gauge daemon initialized and listening on port: 57599
+09-01-2025 14:55:27.344 [Gauge] [DEBUG] Watching directory: C:\Users\human\AquaProjects\aquatests\specs
+09-01-2025 14:55:27.344 [Gauge] [DEBUG] Found 2 files
